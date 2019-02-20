@@ -43,6 +43,10 @@ printf "       Host name [ttn-gateway]:"
 read NEW_HOSTNAME
 if [[ $NEW_HOSTNAME == "" ]]; then NEW_HOSTNAME="ttn-gateway"; fi
 
+printf "       Region AS1, AS2, AU, CN, EU, IN, KR, RU, US [EU]:"
+read NEW_REGION
+if [[ $NEW_REGION == "" ]]; then NEW_REGION="EU"; fi
+
 printf "       Latitude [0]: "
 read GATEWAY_LAT
 if [[ $GATEWAY_LAT == "" ]]; then GATEWAY_LAT=0; fi
@@ -55,6 +59,11 @@ printf "       Altitude [0]: "
 read GATEWAY_ALT
 if [[ $GATEWAY_ALT == "" ]]; then GATEWAY_ALT=0; fi
 
+# Check the region
+if [[ $NEW_REGION != "AS1" && $NEW_REGION != "AS2" && $NEW_REGION != "AU" && $NEW_REGION != "CN" && $NEW_REGION != "EU" && $NEW_REGION != "IN" && $NEW_REGION != "KR" && $NEW_REGION != "RU" && $NEW_REGION != "US" ]]; then
+    echo "ERROR: An unknown region has been selected: $NEW_REGION"
+    exit 1
+fi
 
 # Change hostname if needed
 CURRENT_HOSTNAME=$(hostname)
@@ -75,35 +84,39 @@ INSTALL_DIR="/opt/ttn-gateway"
 if [ ! -d "$INSTALL_DIR" ]; then mkdir $INSTALL_DIR; fi
 pushd $INSTALL_DIR
 
-# Build LoRa gateway app
-
+# Get LoRa gateway repo
 git clone https://github.com/Lora-net/lora_gateway.git
-
 pushd lora_gateway
 
-# cp $SCRIPT_DIR/library.cfg ./libloragw/library.cfg
-
+# Build LoRa gateway
 make
 
 popd
 
-# Build packet forwarder
-
+# Get packet forwarder repo
 git clone https://github.com/Lora-net/packet_forwarder.git
 pushd packet_forwarder
 
+# Copy start.sh
 cp $SCRIPT_DIR/start.sh ./lora_pkt_fwd/start.sh
 
+# Rename the original global_conf.json
+mv ./lora_pkt_fwd/global_conf.json ./lora_pkt_fwd/global_conf.json_old
+
+# Get the correct regional global_conf.json file
+echo "$SCRIPT_DIR/configuration_files/$NEW_REGION-global_conf.json"
+cp $SCRIPT_DIR/configuration_files/$NEW_REGION-global_conf.json ./lora_pkt_fwd/global_conf.json
+
+# Get the local_conf.json file
+cp $SCRIPT_DIR/configuration_files/local_conf.json ./lora_pkt_fwd/local_conf.json
+
+# Change the gateway ID in the local_conf.json file
+sed -i -e "s/INSERT_THE_GATEWAY_EUI/$GATEWAY_EUI/g" ./lora_pkt_fwd/local_conf.json
+
+# Build packet forwarder
 make
 
 popd
-
-
-LOCAL_CONFIG_FILE=$INSTALL_DIR/packet_forwarder/lora_pkt_fwd/local_conf.json
-
-#config local_conf.json
-
-    echo -e "{\n\t\"gateway_conf\": {\n\t\t\"gateway_ID\": \"$GATEWAY_EUI\",\n\t\t\"server_address\": \"router.eu.thethings.network\",\n\t\t\"serv_port_up\": 1700,\n\t\t\"serv_port_down\": 1700,\n\t\t\"serv_enabled\": true,\n\t\t\"ref_latitude\": $GATEWAY_LAT,\n\t\t\"ref_longitude\": $GATEWAY_LON,\n\t\t\"ref_altitude\": $GATEWAY_ALT \n\t}\n}" >$LOCAL_CONFIG_FILE
 
 echo "Gateway EUI is: $GATEWAY_EUI"
 echo "The hostname is: $NEW_HOSTNAME"
@@ -112,7 +125,6 @@ echo
 echo "Installation completed."
 
 # Start packet forwarder as a service
-#cp ./start.sh $INSTALL_DIR/bin/
 cp $SCRIPT_DIR/ttn-gateway.service /lib/systemd/system/
 systemctl enable ttn-gateway.service
 
