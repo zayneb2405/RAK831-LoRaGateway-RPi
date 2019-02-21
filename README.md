@@ -13,10 +13,10 @@ step 2 : Clone the installer and start the installation
       $ sudo ./install.sh
 
 Step 3 : You must know which frequency plan to use in your country.
-     See the list of frequency plans by country list:
-     https://www.thethingsnetwork.org/docs/lorawan/frequencies-by-country.html
-     The frequency plans can be found at:
-     https://www.thethingsnetwork.org/docs/lorawan/frequency-plans.html 
+     See the list of frequency plans by country list:<br>
+     https://www.thethingsnetwork.org/docs/lorawan/frequencies-by-country.html<br>
+     The frequency plans can be found at:<br>
+     https://www.thethingsnetwork.org/docs/lorawan/frequency-plans.html<br>
      If you know the frequency plan, look at the table and find the corresponding Region.
 
      | Region | Frequency Plan |
