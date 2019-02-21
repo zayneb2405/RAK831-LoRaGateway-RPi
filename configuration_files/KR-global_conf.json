@@ -205,13 +205,7 @@
 	"gateway_conf": {
 		"server_address": "router.kr.thethings.network",
 		"serv_port_up": 1700,
-		"serv_port_down": 1700,
-		"servers": [ {
-			"server_address": "router.kr.thethings.network",
-			"serv_port_up": 1700,
-			"serv_port_down": 1700,
-			"serv_enabled": true
-		} ]
+		"serv_port_down": 1700
 	}
 
 }
