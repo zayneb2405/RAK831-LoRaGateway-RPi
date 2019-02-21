@@ -108,8 +108,11 @@ cp $SCRIPT_DIR/configuration_files/$NEW_REGION-global_conf.json ./lora_pkt_fwd/g
 # Get the local_conf.json file
 cp $SCRIPT_DIR/configuration_files/local_conf.json ./lora_pkt_fwd/local_conf.json
 
-# Change the gateway ID in the local_conf.json file
+# Replace placeholder text in the local_conf.json file
 sed -i -e "s/INSERT_THE_GATEWAY_EUI/$GATEWAY_EUI/g" ./lora_pkt_fwd/local_conf.json
+sed -i -e "s/INSERT_REF_LATITUDE/$GATEWAY_LAT/g" ./lora_pkt_fwd/local_conf.json
+sed -i -e "s/INSERT_REF_LONGITUDE/$GATEWAY_LON/g" ./lora_pkt_fwd/local_conf.json
+sed -i -e "s/INSERT_REF_ALTITUDE/$GATEWAY_ALT/g" ./lora_pkt_fwd/local_conf.json
 
 # Build packet forwarder
 make

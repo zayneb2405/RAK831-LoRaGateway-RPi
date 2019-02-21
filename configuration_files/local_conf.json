@@ -10,9 +10,9 @@
 		"forward_crc_disabled": false,
 
 		/* GPS reference coordinates */
-		"ref_latitude": 0.0,
-		"ref_longitude": 0.0,
-		"ref_altitude": 0
+		"ref_latitude": INSERT_REF_LATITUDE,
+		"ref_longitude": INSERT_REF_LONGITUDE,
+		"ref_altitude": INSERT_REF_ALTITUDE
 
 		/* GPS configuration */
 		/*
