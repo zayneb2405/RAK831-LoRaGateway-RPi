@@ -12,7 +12,7 @@ step 2 : Clone the installer and start the installation
       $ cd ~/rak831-loragateway
       $ sudo ./install.sh
 
-Step 3 : You must know which frequency plan to use in your country.
+Step 3 : You must know which frequency plan to use in your country.<br>
      See the list of frequency plans by country list:<br>
      https://www.thethingsnetwork.org/docs/lorawan/frequencies-by-country.html<br>
      The frequency plans can be found at:<br>
