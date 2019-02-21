@@ -15,8 +15,8 @@ step 2 : Clone the installer and start the installation
 Step 3 : You must know which frequency plan to use in your country.
      See the list of frequency plans by country list:
      https://www.thethingsnetwork.org/docs/lorawan/frequencies-by-country.html
-     The frequency plans can be found at: 
-     https://www.thethingsnetwork.org/docs/lorawan/frequency-plans.html
+     The frequency plans can be found at:
+     https://www.thethingsnetwork.org/docs/lorawan/frequency-plans.html 
      If you know the frequency plan, look at the table and find the corresponding Region.
 
      | Region | Frequency Plan |
