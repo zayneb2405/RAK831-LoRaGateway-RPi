@@ -1,5 +1,5 @@
 # RAK831-LoRaGateway-RPi
-The RAK831 gateway is based on the latest SX1301 driver [lora_gateway](https://github.com/Lora-net/lora_gateway) v5.0.1 and semtech [packet_forwarder](https://github.com/Lora-net/packet_forwarder) v4.0.1  
+The RAK831 gateway is based on the latest SX1301 driver [lora_gateway](https://github.com/Lora-net/lora_gateway) v5.0.1 and Semtech [packet_forwarder](https://github.com/Lora-net/packet_forwarder) v4.0.1  
 
 
 ##	Installation procedure
