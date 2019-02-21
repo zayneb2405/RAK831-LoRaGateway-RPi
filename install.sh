@@ -45,15 +45,15 @@ printf "       Region AS1, AS2, AU, CN, EU, IN, KR, RU, US [EU]:"
 read NEW_REGION
 if [[ $NEW_REGION == "" ]]; then NEW_REGION="EU"; fi
 
-printf "       Latitude [0]: "
+printf "       Latitude in degrees [0.0]: "
 read GATEWAY_LAT
 if [[ $GATEWAY_LAT == "" ]]; then GATEWAY_LAT=0; fi
 
-printf "       Longitude [0]: "
+printf "       Longitude in degrees [0.0]: "
 read GATEWAY_LON
 if [[ $GATEWAY_LON == "" ]]; then GATEWAY_LON=0; fi
 
-printf "       Altitude [0]: "
+printf "       Altitude in meters [0]: "
 read GATEWAY_ALT
 if [[ $GATEWAY_ALT == "" ]]; then GATEWAY_ALT=0; fi
 
