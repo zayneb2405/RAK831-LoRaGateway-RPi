@@ -4,7 +4,7 @@ The RAK831 gateway is based on the latest SX1301 driver [lora_gateway](https://g
 
 ##	Installation procedure
 
-step 1 : Download and install [Raspbian Stretch LITE](https://www.raspberrypi.org/downloads/raspbian/)
+step 1 : Download and install [Raspbian LITE version](https://www.raspberrypi.org/downloads/raspbian/)
 
 
 step 2 : Clone the installer and start the installation
