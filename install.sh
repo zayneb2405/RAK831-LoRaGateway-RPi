@@ -47,11 +47,11 @@ if [[ $NEW_REGION == "" ]]; then NEW_REGION="EU"; fi
 
 printf "       Latitude in degrees [0.0]: "
 read GATEWAY_LAT
-if [[ $GATEWAY_LAT == "" ]]; then GATEWAY_LAT=0; fi
+if [[ $GATEWAY_LAT == "" ]]; then GATEWAY_LAT=0.0; fi
 
 printf "       Longitude in degrees [0.0]: "
 read GATEWAY_LON
-if [[ $GATEWAY_LON == "" ]]; then GATEWAY_LON=0; fi
+if [[ $GATEWAY_LON == "" ]]; then GATEWAY_LON=0.0; fi
 
 printf "       Altitude in meters [0]: "
 read GATEWAY_ALT
