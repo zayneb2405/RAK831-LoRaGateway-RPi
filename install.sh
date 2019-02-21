@@ -17,8 +17,6 @@ echo "The RAK831 Gateway installer"
 echo "Version $VERSION"
 
 # Request gateway configuration data
-# There are two ways to do it, manually specify everything
-# or rely on the gateway EUI and retrieve settings files from remote (recommended)
 echo "Gateway configuration:"
 
 # Try to get gateway ID from MAC address
