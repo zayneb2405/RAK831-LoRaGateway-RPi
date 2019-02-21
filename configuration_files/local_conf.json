@@ -17,7 +17,7 @@
 		/* GPS configuration */
 		/*
 		"gps_tty_path": "/dev/ttyAMA0",
-		"fake_gps": false,
+		"fake_gps": false
 		*/
 
 		/* Beaconing parameters */

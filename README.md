@@ -31,10 +31,11 @@ step 4 : This step is optional. By default GPS is disabled. If you want to use G
         "gateway_conf": {
             :
             "gps_tty_path": "/dev/ttyAMA0",
-            "fake_gps": false,
+            "fake_gps": false
             :
         }
 
+        Watch out for the commas. The JSON file must be valid!
       - Reboot the gateway after file local_conf.json is modified.
 
 step 5 : Now you have a running gateway after restart!
