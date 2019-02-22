@@ -4,12 +4,12 @@ The RAK831 gateway is based on the latest SX1301 driver [lora_gateway](https://g
 
 ##	Installation procedure
 
-Before you start with the installation procedure you must know which frequency plan to use in your country.
-See the list of frequency plans by country list:
-https://www.thethingsnetwork.org/docs/lorawan/frequencies-by-country.html
-The frequency plans can be found at:
-https://www.thethingsnetwork.org/docs/lorawan/frequency-plans.html
-If you know the frequency plan, look at the table and find the corresponding Region.
+Before you start with the installation procedure you must know which frequency plan to use in your country.  
+See the list of frequency plans by country list:  
+https://www.thethingsnetwork.org/docs/lorawan/frequencies-by-country.html  
+The frequency plans can be found at:  
+https://www.thethingsnetwork.org/docs/lorawan/frequency-plans.html  
+If you know the frequency plan, look at the table and find the corresponding Region.  
 
 | Region | Frequency Plan |
 |--------|----------------|
