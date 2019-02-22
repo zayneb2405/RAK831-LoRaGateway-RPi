@@ -1,3 +1,4 @@
+/* KR-global_conf.json */
 {
 	"SX1301_conf": {
 		"lorawan_public": true,
