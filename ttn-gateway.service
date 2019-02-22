@@ -1,5 +1,5 @@
 [Unit]
-Description=The RAK831 Gateway
+Description=The Things Network Gateway
 
 [Service]
 WorkingDirectory=/opt/ttn-gateway/packet_forwarder/lora_pkt_fwd/
