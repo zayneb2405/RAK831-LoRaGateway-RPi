@@ -3,6 +3,8 @@ https://github.com/TheThingsNetwork/gateway-conf
 
 The following modifications were made to these files:
 
+     - Add comment on top of each file containing the global configuration filename. 
+       To help users to identify which region was selected.
      - Set lbt_cfg.enable = false
      - Remove the "servers" parameter and its value. The servers parameter are not used by the Semtech lora_gateway and packet_forwarder.
 
