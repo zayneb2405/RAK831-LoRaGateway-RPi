@@ -8,7 +8,7 @@
 		"antenna_gain_desc": "antenna gain, in dBi",
 		"radio_0": {
 			"enable": true,
-			"type": "SX1257",
+			"type": "SX1267",
 			"freq": 867500000,
 			"rssi_offset": -166.0,
 			"tx_enable": true,
